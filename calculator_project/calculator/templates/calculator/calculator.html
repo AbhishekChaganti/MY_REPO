@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="num1" placeholder="number" required>
+        <input type="text" name="operation" placeholder="operation" required>
+        <input type="text" name="num2" placeholder="number" required>
+        <button type="submit">=</button>
+    </form>
+
+    {% if result is not None %}
+        <h3>{{ result }}</h3>
+    {% endif %}
+</body>
+</html>
